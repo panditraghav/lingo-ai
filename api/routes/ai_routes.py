@@ -29,6 +29,10 @@ class ChatMessage(BaseModel):
 def create_new_chat():
     return client.aio.chats.create(model='gemini-2.0-flash', config = GenerateContentConfig(system_instruction= "You are a AI english tutor of Lingo English Learning application, you have to explain all the doubts that the user have. You have to generate text which will be input to a text-to-speech model, so you have to generate text which doesn't have formattings like bullet points, headings, etc. Don't output text in markdown format, just plain text."))
 
+@ai_router.get("/")
+def test():
+    return {"Hello": "World"}
+
 @ai_router.get("/chat/new/{user_id}")
 def new_chat(user_id: str):
     try:
