@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from dotenv import load_dotenv
-load_dotenv("../.env")
+load_dotenv(".env")
 from api.routes.ai_routes import ai_router
 from fastapi.staticfiles import StaticFiles
 
